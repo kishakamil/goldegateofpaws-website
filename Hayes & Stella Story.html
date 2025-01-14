@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="keywords" content="adoption, dogs, pets" />
+<meta name="description" content="Golden Gate of Paws - Find your furry friend for adoption!" />
+<meta name="author" content="Golden Gate of Paws Team" />
+
+<title>Golden Gate of Paws</title>
+
+<!-- Bootstrap core CSS -->
+<link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+
+<!-- Fonts style -->
+<link href="https://fonts.googleapis.com/css?family=Open+Sans|Poppins:400,700&display=swap" rel="stylesheet">
+
+<!-- Custom styles for this template -->
+<link href="css/style.css" rel="stylesheet" />
+<link href="css/responsive.css" rel="stylesheet" />
+
+<style>
+/* Additional styles */
+body {
+  font-family: 'Open Sans', sans-serif;
+}
+
+.header_section {
+  margin-bottom: 20px;
+}
+
+.filter-section {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  text-align: right;
+}
+
+.filter-section select {
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 5px;
+}
+
+.dog-card {
+  display: block;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.row > .column {
+  padding: 0 8px;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.column {
+  float: left;
+  width: 25%;
+}
+
+.column img {
+  width: 100%;
+  border-radius: 8px;
+}
+
+a:hover {
+  text-decoration: none;
+}
+</style>
+</head>
+<body class="sub_page">
+
+<div class="hero_area">
+  <!-- Header Section -->
+  <header class="header_section">
+    <div class="container-fluid">
+      <nav class="navbar navbar-expand-lg custom_nav-container">
+        <a class="navbar-brand" href="index.html">
+          <img src="images/ADOPT__2_-removebg-preview.png" alt="Golden Gate of Paws">
+        </a>
+        <div class="custom_menu-btn">
+          <button onclick="openNav()">
+            <span class="s-1"></span>
+            <span class="s-2"></span>
+            <span class="s-3"></span>
+          </button>
+        </div>
+        <div id="myNav" class="overlay">
+          <div class="overlay-content">
+            <a href="index.html">Home</a>
+            <a href="AdoptionChecklist.html">Adoption Checklist</a>
+            <a href="CareAfterAdoption.html">Care After Adoption</a>
+            <a href="FAQS.html">FAQs</a>
+            <a href="contact.html">Contact Us</a>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </header>
+  <!-- End Header Section -->
+</div>
+
+<strong><h2 style="text-align:center">Dogs for Adoption</h2></strong>
+
+<!-- Filter Section -->
+<div class="filter-section">
+  <label for="dogFilter">Filter by:</label>
+  <select id="dogFilter" onchange="filterDogs()">
+    <option value="all">All</option>
+    <option value="small">Small</option>
+    <option value="medium">Medium</option>
+    <option value="large">Large</option>
+    <option value="young">Young</option>
+    <option value="adult">Adult</option>
+  </select>
+</div>
+
+<!-- Dogs Gallery -->
+<div class="row">
+  <div class="column dog-card small young">
+    <a href="Roo Info.html">
+      <img src="images/Roo.jpg" alt="Roo">
+      <p>Roo</p>
+    </a>
+  </div>
+  <div class="column dog-card medium adult">
+    <a href="Willie Info.html">
+      <img src="images/Willie.jpg" alt="Willie">
+      <p>Willie</p>
+    </a>
+  </div>
+  <div class="column dog-card large adult">
+    <a href="Onyx Info.html">
+      <img src="images/onyx 2.jpg" alt="Onyx">
+      <p>Onyx</p>
+    </a>
+  </div>
+  <div class="column dog-card small young">
+    <a href="Fenix Info.html">
+      <img src="images/Fenix 2.jpg" alt="Fenix">
+      <p>Fenix</p>
+    </a>
+  </div>
+  <div class="column dog-card large adult">
+    <a href="Gunnie Info.html">
+      <img src="images/gunnie 2.jpg" alt="Gunnie">
+      <p>Gunnie</p>
+    </a>
+  </div>
+  <div class="column dog-card small young">
+    <a href="Barry Info.html">
+      <img src="images/barry 3.jpg" alt="Barry">
+      <p>Barry</p>
+    </a>
+  </div>
+  <div class="column dog-card large adult">
+    <a href="Goliath Info.html">
+      <img src="images/goliath 2.jpg" alt="Goliath">
+      <p>Goliath</p>
+    </a>
+  </div>
+  <div class="column dog-card medium adult">
+    <a href="Demsey Info.html">
+      <img src="images/demsey 2.jpg" alt="Demsey">
+      <p>Demsey</p>
+    </a>
+  </div>
+  <div class="column dog-card small young">
+    <a href="Foxy Info.html">
+      <img src="images/Foxy 2.jpg" alt="Foxy">
+      <p>Foxy</p>
+    </a>
+  </div>
+  <div class="column dog-card large adult">
+    <a href="Hank Info.html">
+      <img src="images/Hank 2.jpg" alt="Hank">
+      <p>Hank</p>
+    </a>
+  </div>
+  <div class="column dog-card medium adult">
+    <a href="Horatio Info.html">
+      <img src="images/Horatio 2.jpg" alt="Horatio">
+      <p>Horatio</p>
+    </a>
+  </div>
+</div>
+
+<script>
+function filterDogs() {
+  const filterValue = document.getElementById("dogFilter").value;
+  const dogs = document.querySelectorAll(".dog-card");
+
+  dogs.forEach(dog => {
+    if (filterValue === "all") {
+      dog.classList.remove("hidden");
+    } else if (!dog.classList.contains(filterValue)) {
+      dog.classList.add("hidden");
+    } else {
+      dog.classList.remove("hidden");
+    }
+  });
+}
+
+function openNav() {
+  document.getElementById("myNav").classList.toggle("menu_width");
+  document.querySelector(".custom_menu-btn").classList.toggle("menu_btn-style");
+}
+</script>
+
+<!-- Info Section -->
+<section class="info_section">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 col-lg-3">
+        <div class="info_contact">
+          <h5>CONTACT INFO</h5>
+          <div>
+            <img src="images/call.png" alt="Phone Icon">
+            <p>+01 1234567890</p>
+          </div>
+          <div>
+            <img src="images/mail.png" alt="Email Icon">
+            <p>demo@gmail.com</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+</body>
+</html>
+
+
+
+<!-- partial -->
+  
+  <section class="info_section">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 col-lg-3">
+          <div class="info_contact">
+            <h5>
+              CONTACT INFO
+            </h5>
+            <div>
+              <img src="images/call.png" alt="" />
+              <p>
+                +01 1234567890
+              </p>
+            </div>
+            <div>
+              <img src="images/mail.png" alt="" />
+              <p>
+                demo@gmail.com
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3">
+          <div class="info_time">
+            <h5>
+              Opening Hours Shop
+            </h5>
+            <div>
+              <p>
+                Monday to friday
+              </p>
+            </div>
+            <div>
+              <p>
+                07:00 am to 04:00 pm
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-3">
+          <div class="info_social">
+            <h5>
+              social media
+            </h5>
+            <div class="social_container">
+              <div>
+                <a href="">
+                  <img src="images/fb.png" alt="" />
+                </a>
+              </div>
+              <div>
+                <a href="">
+                  <img src="images/twitter.png" alt="" />
+                </a>
+              </div>
+              <div>
+                <a href="">
+                  <img src="images/linkedin.png" alt="" />
+                </a>
+              </div>
+              <div>
+                <a href="">
+                  <img src="images/instagram.png" alt="" />
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3">
+          <div class="info_form pl-lg-4">
+            <h5>
+              Newsletter
+            </h5>
+            <form action="">
+              <input type="text" placeholder="Enter Your Email" />
+              <button type="submit">
+                Subscribe
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- end info_section -->
+
+  <!-- footer section -->
+  <section class="container-fluid footer_section ">
+    <p>
+      &copy;2024 All Rights Reserved
+    </p>
+  </section>
+  <!-- end  footer section -->
+<script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+  <script type="text/javascript" src="js/bootstrap.js"></script>
+  <script>
+    function openNav() {
+      document.getElementById("myNav").classList.toggle("menu_width")
+      document.querySelector(".custom_menu-btn").classList.toggle("menu_btn-style")
+    }
+  </script>
+
+    <!-- Analytics -->
+
+	</body>
+</html>

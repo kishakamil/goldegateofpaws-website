@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Golden Gate of Paws</title>
+  
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <link href="css/style.css" rel="stylesheet">
+  <link href="css/responsive.css" rel="stylesheet">
+  
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans|Poppins:400,700&display=swap" rel="stylesheet">
+
+  <style>
+    /* Add your styles here */
+    /* General Styles */
+    body {
+      font-family: Verdana, sans-serif;
+      margin: 0;
+    }
+
+    h2 {
+      font-family: "Poppins", sans-serif;
+      font-size: 48px;
+      font-weight: bold;
+      text-align: center;
+      margin-top: 50px;
+      color: #0c0c0c;
+      background-color: #ffffff;
+      text-transform: uppercase;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    .container {
+      display: flex;
+      flex-wrap: nowrap;
+    }
+
+    /* Filter Section */
+    .filter-section {
+      width: 100%;
+      padding: 2.5px;
+      background-color: #EEEEEES;
+      border-right: 1px solid #ddd;
+    }
+
+    .filter-section label {
+      font-family: "Poppins", sans-serif;
+      font-size: 16px;
+      margin-bottom: 5px;
+      display: block;
+    }
+
+    .filter-section select {
+      width: 20%;
+      padding: 5px;
+      font-size: 16px;
+    }
+
+    .filter-section button {
+      background-color: #0a2050;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      font-size: 16px;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-top: 20px;
+    }
+	
+	
+
+    /* Dog Gallery */
+    .gallery-section {
+      width: 80%;
+      padding: 20px;
+    }
+
+    .row > .column {
+      padding: 0 8px;
+    }
+
+    .row:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+
+    .column {
+      float: left;
+      width: 25%;
+      text-align: center;
+    }
+
+    img {
+      margin-bottom: -4px;
+      border-radius: 15px;
+      transition: 0.3s;
+      width: 100%;
+    }
+
+    img:hover {
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    }
+
+    .dog-name {
+      font-family: "Poppins", sans-serif;
+      font-size: 18px;
+      font-weight: bold;
+      text-align: center;
+      margin-top: 10px;
+      color: #0a2050;
+    }
+
+    
+    /* Footer Section */
+    .info_section {
+      background-color: #002a5e;
+      color: #fff;
+      padding: 40px 500px;
+      text-align: center;
+    }
+
+    .info_section h5 {
+      font-size: 18px;
+      margin-bottom: 15px;
+      text-transform: uppercase;
+      font-weight: bold;
+    }
+
+    .info_section p {
+      margin: 0;
+      font-size: 14px;
+    }
+
+    .info_section img {
+      width: 20px;
+      height: auto;
+      margin-right: 10px;
+      vertical-align: middle;
+    }
+
+    .social_container div {
+      display: inline-block;
+      margin: 0 10px;
+    }
+
+    .social_container img {
+      width: 25px;
+      height: auto;
+    }
+
+    .info_form input[type="text"] {
+      width: 70%;
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+      margin-bottom: 10px;
+    }
+
+    .info_form button {
+      padding: 10px 20px;
+      border: none;
+      background-color: #ffc500;
+      color: #002a5e;
+      font-weight: bold;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .info_form button:hover {
+      background-color: #e6b800;
+    }
+
+    .footer_section {
+      background-color: #ffc500;
+      color: #002a5e;
+      text-align: center;
+      padding: 15px 0;
+      font-size: 14px;
+      font-weight: bold;
+    }
+
+    /* Custom Style for Filters */
+    .filter-section-container {
+      display: flex;
+      gap: 20px;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    .visible {
+      display: block;
+    }
+  </style>
+</head>
+<body class="sub_page">
+  <div class="hero_area ">
+    <!-- header section starts -->
+    <header class="header_section">
+      <div class="container-fluid">
+        <nav class="navbar navbar-expand-lg custom_nav-container">
+          <a class="navbar-brand" href="index.html">
+            <img src="images/ADOPT__2_-removebg-preview.png" alt="">
+          </a>
+          <div class="" id="">
+            <div class="User_option">
+              <form class="form-inline my-2  mb-3 mb-lg-0">
+                <input type="search" placeholder="Search">
+                <button class="btn   my-sm-0 nav_search-btn" type="submit"></button>
+              </form>
+            </div>
+
+            <div class="custom_menu-btn">
+              <button onclick="openNav()">
+                <span class="s-1"></span>
+                <span class="s-2"></span>
+                <span class="s-3"></span>
+              </button>
+            </div>
+            <div id="myNav" class="overlay">
+              <div class="overlay-content">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+				<a href="AdoptionChecklist.html">Adoption Checklist</a>
+				<a href="CareAfterAdoption.html">Care after Adoption</a>
+				<a href="FAQS.html">PET ADOPTION FAQS</a>
+                <a href="contact.html">Contact Us</a>
+              </div>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </header>
+  </div>
+
+  <!-- Main Content -->
+  <main>
+    <h1 class="text-center"><strong>Dogs for Adoption</strong></h1>
+
+     <!-- Filter Section -->
+    <section class="filter-section">
+      <label for="mainFilter">Filter:</label>
+      <select id="mainFilter" onchange="toggleGenderSubfilter()">
+        <option value="all">All</option>
+        <option value="gender">Gender</option>
+      </select>
+
+      <!-- Gender Subfilter -->
+      <div id="genderSubfilter" class="hidden">
+        <label for="genderFilter">Select Gender:</label>
+        <select id="genderFilter" onchange="toggleAgeSizeFilters()">
+          <option value="all">All</option>
+          <option value="male">Male</option>
+          <option value="female">Female</option>
+        </select>
+      </div>
+
+      <!-- Age Subfilter -->
+      <div id="ageSubfilter" class="hidden">
+        <label for="ageFilter">Select Age:</label>
+        <select id="ageFilter" onchange="filterCats()">
+          <option value="all">All</option>
+          <option value="young">Young</option>
+          <option value="adult">Adult</option>
+        </select>
+      </div>
+
+      <!-- Size Subfilter -->
+      <div id="sizeSubfilter" class="hidden">
+        <label for="sizeFilter">Select Size:</label>
+        <select id="sizeFilter" onchange="filterCats()">
+          <option value="all">All</option>
+          <option value="small">Small</option>
+          <option value="medium">Medium</option>
+          <option value="large">Large</option>
+        </select>
+      </div>
+    </section>
+
+<br>
+			<div class="row">
+			  <div class="row">
+        <div class="column" data-size="medium" data-age="young">
+        <a href="Roo Info.html">
+          <img src="images/roo 2.jpg" alt="Roo">
+        </a>
+        <p class="dog-name">Roo</p>
+      </div>
+			  
+      <div class="column" data-size="medium"  data-age="adult">
+        <a href="Willie Info.html">
+          <img src="images/Willie.jpg" alt="Willie"style="width:150%">
+        </a>
+        <p class="dog-name">Willie</p>
+      </div>
+			 
+      <div class="column dog-card large adult">
+        <a href="Onyx Info.html">
+          <img src="images/onyx 2.jpg" alt="Onyx"style="width:150%">
+        </a>
+        <p class="dog-name">Onyx</p>
+      </div>
+			  <div class="column dog-card small young">
+        <a href="Fenix Info.html">
+          <img src="images/Fenix 2.jpg" alt="Fenix"style="width:150%">
+        </a>
+        <p class="dog-name">Fenix</p>
+      </div>
+			  <div class="column" style="padding-top: 20px;"data-size="large" data-age="adult">
+        <a href="Gunnie Info.html">
+          <img src="images/gunnie 2.jpg" alt="Gunnie"style="width:150%">
+        </a>
+        <p class="dog-name">Gunnie</p>
+      </div>
+			    <div class="column" style="padding-top: 20px;" data-size="small" data-age="young">
+        <a href="Barry Info.html">
+          <img src="images/barry 3.jpg" alt="Barry"style="width:150%">
+        </a>
+        <p class="dog-name">Barry</p>
+      </div>
+			   <div class="column" style="padding-top: 20px;" dog-card large adult">
+        <a href="Goliath Info.html">
+          <img src="images/goliath 2.jpg" alt="Goliath"style="width:150%">
+        </a>
+        <p class="dog-name">Goliath</p>
+      </div>
+			  <div class="column" style="padding-top: 20px;" dog-card medium adult">
+        <a href="Demsey Info.html">
+          <img src="images/demsey 2.jpg" alt="Demsey"style="width:150%">
+        </a>
+        <p class="dog-name">Demsey</p>
+      </div>
+			  <div class="column"style="padding-top: 20px;" dog-card small young">
+        <a href="Foxy Info.html">
+          <img src="images/Foxy 2.jpg" alt="Foxy"style="width:150%">
+        </a>
+        <p class="dog-name">Foxy</p>
+      </div>
+			  <div class="column" style="padding-top: 20px;" dog-card large adult">
+        <a href="Hank Info.html">
+          <img src="images/Hank 2.jpg" alt="Hank"style="width:150%">
+        </a>
+        <p class="dog-name">Hank</p>
+      </div>
+			  <div class="column"style="padding-top: 20px;">
+				<a href="Hailey Info.html">
+				<img src="images/Hailey 2.jpg" style="width:150%">
+				</a>
+				        <p class="cat-name">Hailey</p>
+			  </div>
+			   <div class="column"style="padding-top: 20px;">
+				<a href="Shania Info.html">
+				<img src="images/Shania 2.jpg" style="width:150%">
+				</a>
+				        <p class="cat-name">Shania</p>
+			  </div>
+			</div>
+			<div id="myModal" class="modal">
+			  <span class="close cursor" onclick="closeModal()">&times;</span>
+			  <div class="modal-content">
+
+				<div class="mySlides">
+				  <div class="numbertext">1 / 4</div>
+				  <img src="images/Pic1.jpg" style="width:100%">
+				</div>
+
+				<div class="mySlides">
+				  <div class="numbertext">2 / 4</div>
+				  <img src="images/Pic2.jpg" style="width:100%">
+				</div>
+
+				<div class="mySlides">
+				  <div class="numbertext">3 / 4</div>
+				  <img src="images/Pic3.jpg" style="width:100%">
+				</div>
+				
+				<div class="mySlides">
+				  <div class="numbertext">4 / 4</div>
+				  <img src="images/Pic4.jpg" style="width:100%">
+				</div>
+				
+				 <div class="mySlides">
+				  <div class="numbertext">4 / 4</div>
+				  <img src="images/Pic4.jpg" style="width:100%">
+				</div>
+				
+				<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+				<a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+				<div class="caption-container">
+				  <p id="caption"></p>
+				</div>
+
+
+				<div class="column">
+				  <img class="demo cursor" src="images/Roo.jfif" style="width:100%" onclick="currentSlide(1)" alt="Nature and sunrise">
+				</div>
+				<div class="column">
+				  <img class="demo cursor" src="images/Willie.jfif" style="width:100%" onclick="currentSlide(2)" alt="Snow">
+				</div>
+				<div class="column">
+				  <img class="demo cursor" src="images/onyx 2.jpg" style="width:100%" onclick="currentSlide(3)" alt="Mountains and fjords">
+				</div>
+				<div class="column">
+				  <img class="demo cursor" src="images/Fenix 2.jpg" style="width:100%" onclick="currentSlide(4)" alt="Northern Lights">
+				</div>
+				<div class="column">
+				  <img class="demo cursor" src="images/Fenix 2.jpg" style="width:100%" onclick="currentSlide(4)" alt="Northern Lights">
+				</div>
+			  </div>
+			</div>
+		</br>
+ <!-- info section -->
+  <section class="info_section">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 col-lg-3">
+          <div class="info_contact">
+            <h5>
+              CONTACT INFO
+            </h5>
+            <div>
+              <img src="images/call.png" alt="" />
+              <p>
+                +01 1234567890
+              </p>
+            </div>
+            <div>
+              <img src="images/mail.png" alt="" />
+              <p>
+                goldenpaws@gmail.com
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3">
+          <div class="info_time">
+            <h5>
+              Opening Hours Shop
+            </h5>
+            <div>
+              <p>
+                Monday to friday
+              </p>
+            </div>
+            <div>
+              <p>
+                07:00 am to 04:00 pm
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-3">
+          <div class="info_social">
+            <h5>
+              social media
+            </h5>
+            <div class="social_container">
+              <div>
+                <a href="">
+                  <img src="images/fb.png" alt="" />
+                </a>
+              </div>
+              <div>
+                <a href="">
+                  <img src="images/twitter.png" alt="" />
+                </a>
+              </div>
+              <div>
+                <a href="">
+                  <img src="images/linkedin.png" alt="" />
+                </a>
+              </div>
+              <div>
+                <a href="">
+                  <img src="images/instagram.png" alt="" />
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3">
+          <div class="info_form pl-lg-4">
+            <h5>
+              Newsletter
+            </h5>
+            <form action="">
+              <input type="text" placeholder="Enter Your Email" />
+              <button type="submit">
+                Subscribe
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- footer section -->
+  <section class="container-fluid footer_section">
+    <p>
+      &copy; 2025 All Rights Reserved. 
+    </p>
+  </section>
+
+  <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+  <script type="text/javascript" src="js/bootstrap.js"></script>
+  <script>
+    function openNav() {
+      document.getElementById("myNav").classList.toggle("menu_width")
+      document.querySelector(".custom_menu-btn").classList.toggle("menu_btn-style")
+    }
+
+    function filterCats() {
+      var sizeFilter = document.getElementById("sizeFilter").value;
+      var genderFilter = document.getElementById("genderFilter").value;
+
+      var columns = document.querySelectorAll(".column");
+
+      columns.forEach(function(column) {
+        var columnSize = column.getAttribute("data-size");
+        var columnGender = column.getAttribute("data-gender");
+
+        var sizeMatch = (sizeFilter === "all" || sizeFilter === columnSize);
+        var genderMatch = (genderFilter === "all" || genderFilter === columnGender);
+
+        if (sizeMatch && genderMatch) {
+          column.classList.remove("hidden");
+          column.classList.add("visible");
+        } else {
+          column.classList.remove("visible");
+          column.classList.add("hidden");
+        }
+      });
+    }
+  </script>
+
+</body>
+</html>

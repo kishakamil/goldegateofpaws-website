@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dogs for Adoption</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f9f9f9;
+    }
+    .header {
+      text-align: center;
+      padding: 20px;
+      background-color: #f4c542;
+      color: #333;
+    }
+    .filter-container {
+      text-align: center;
+      margin: 20px;
+    }
+    .grid-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      padding: 20px;
+      max-width: 1200px;
+      margin: auto;
+    }
+    .dog-card {
+      text-align: center;
+      background: #fff;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+    }
+    .dog-card:hover {
+      transform: translateY(-5px);
+    }
+    .dog-image {
+      width: 100%;
+      height: auto;
+    }
+    .dog-name {
+      padding: 10px;
+      font-size: 18px;
+      font-weight: bold;
+      color: #444;
+    }
+  </style>
+  <script>
+    function filterDogs() {
+      const selectedBreed = document.getElementById("breedFilter").value.toLowerCase();
+      const cards = document.querySelectorAll(".dog-card");
+
+      cards.forEach(card => {
+        const breed = card.getAttribute("data-breed").toLowerCase();
+        if (selectedBreed === "all" || breed.includes(selectedBreed)) {
+          card.style.display = "block";
+        } else {
+          card.style.display = "none";
+        }
+      });
+    }
+  </script>
+</head>
+<body>
+  <div class="header">
+    <h1>Dogs for Adoption</h1>
+  </div>
+  
+  <div class="filter-container">
+    <label for="breedFilter">Filter by Breed: </label>
+    <select id="breedFilter" onchange="filterDogs()">
+      <option value="all">All</option>
+      <option value="Labrador Retriever">Labrador Retriever</option>
+      <option value="Beagle">Beagle</option>
+      <option value="Rottweiler">Rottweiler</option>
+      <option value="Mixed Breed">Mixed Breed</option>
+    </select>
+  </div>
+
+  <div class="grid-container">
+    <div class="dog-card" data-breed="Labrador Retriever">
+      <img src="dog1.jpg" alt="Dog 1" class="dog-image">
+      <div class="dog-name">Buddy</div>
+    </div>
+    <div class="dog-card" data-breed="Beagle">
+      <img src="dog2.jpg" alt="Dog 2" class="dog-image">
+      <div class="dog-name">Max</div>
+    </div>
+    <div class="dog-card" data-breed="Rottweiler">
+      <img src="dog3.jpg" alt="Dog 3" class="dog-image">
+      <div class="dog-name">Roxy</div>
+    </div>
+    <div class="dog-card" data-breed="Mixed Breed">
+      <img src="dog4.jpg" alt="Dog 4" class="dog-image">
+      <div class="dog-name">Luna</div>
+    </div>
+  </div>
+</body>
+</html>
